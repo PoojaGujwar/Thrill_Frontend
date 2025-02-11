@@ -1,6 +1,5 @@
-import { Link, useNavigate ,NavLink} from "react-router-dom";
+import { Link,NavLink} from "react-router-dom";
 import useFetch from "../useFetch";
-import Header from "../components/Header";
 import TeamForm from "../components/TeamForm";
 import { useEffect, useState } from "react";
 
@@ -28,13 +27,8 @@ setFetchTeam(teams)
       }
      
     return(
-        <div className="row mx-5 py-5">
-           
-            <div className="col-md-3">
-            <Header/>
-            </div>
+        <div className="mx-5">
         <div className="col">
-         
             <h3>Teams <NavLink className="btn btn-primary float-end" onClick={()=>setShowValue(true)}>+ New Teams</NavLink></h3>
             <div className="row py-3">
             {fetchTeam?.map((team)=>

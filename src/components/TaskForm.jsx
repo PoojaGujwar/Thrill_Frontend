@@ -90,10 +90,10 @@ const handleOwner=(e)=>{
 
     
     return (
-        <div ref={modelRef} onClick ={closeModel} className="inset-0 fixed  bg-black bg-opacity-50 flex justify-center items-center" style={{ minHeight: "100vh", zIndex: "1050",minWidth:"100vh" }}>
+        <div ref={modelRef} onClick ={closeModel} className="inset-0 fixed  bg-black bg-opacity-50 flex justify-center items-center py-5" style={{ minHeight: "100vh", zIndex: "1050",minWidth:"100vh" }}>
            <div className='bg-light p-4 rounded my-5 mx-5 ' style={{width:"35%"}}>
            <h3>Task Form <button onClick={onWork} className="float-end"><X/></button></h3>
-            <form onSubmit={handleSubmitBtn} className="">
+            <form onSubmit={handleSubmitBtn} className="w-100">
                 {message && <p className="alert alert-success">{message}</p>}
                 <div className="row">
                 <div className="col">
@@ -112,10 +112,10 @@ const handleOwner=(e)=>{
                     </select>
                 </div>
                 </div>
-                <div>
+                <div className="row">
                     <label>Owners</label>
                     {users?.map((user)=>(
-                        <div>
+                        <div className="col-md-6">
                         <input type="checkbox" onChange={handleOwner} value={user._id} />  {user.name}
                         </div>
                     ))}

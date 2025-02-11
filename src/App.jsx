@@ -9,16 +9,20 @@ import TeamDetails from "./pages/TeamDetails";
 import TaskDetails from "./pages/TaskDetails";
 import Report from "./pages/Report";
 import Tasks from "./pages/Tasks";
+import ProjectView from "./pages/ProjectView";
+import Header from "./components/Header";
 
 export default function App(){
   return (
-    <div>
+    <div className="d-flex mx-4 py-4 ">
       <Router>
-        <Routes>
+        <Header/>
+        <Routes className="mx-5">
           <Route path="/" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/home" element={<Homepage/>}/>
           <Route path="/project" element={<Projects/>}/>
+          <Route path="/project/:projectId" element={<ProjectView/>}/>
           <Route path="/teams" element={<Teams/>}/>
           <Route path="teams/:teamId" element={<TeamDetails/>}/>
           <Route path="/tasks" element={<Tasks/>}/>

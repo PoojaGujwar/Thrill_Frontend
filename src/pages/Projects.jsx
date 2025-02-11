@@ -1,48 +1,48 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import ProjectForm from "../components/ProjectForm"
 import useFetch from "../useFetch"
 import { NavLink, useLocation, useParams, useSearchParams } from "react-router-dom"
+import ProjectView from "./ProjectView"
 const Projects =()=>{
-    const {data:tasks,error:tasksError}=useFetch("https://workasana-backend-kappa.vercel.app/tasks")
-    const {data:users,error:usersError}=useFetch("https://workasana-backend-kappa.vercel.app/users")
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const {data:projects,loading,error:projectError}=useFetch("https://workasana-backend-kappa.vercel.app/projects")
     const [showProject, setShowValue] = useState(false)
-    const  project_id= useLocation()
-    console.log(project_id)
+    const [fetchProject, setFetchProject] = useState([])
+    
+    useEffect(()=>{
+      if(projects){
+        setFetchProject(projects)
+      }
+    },[projects])
+    const handleAddProject =(newProject)=>{
+      setFetchProject(prevValue => [...prevValue, newProject]);
+    }
     return(
         <>
            
-        <div className="row my-5 mx-5">
-            <div className="col-md-3">
-                <Header/>
-            </div>
+        <div className="row mx-5">
             <div className="col flex flex-col">
             <h3 className="mb-3">Project <NavLink className="btn btn-primary float-end" onClick={()=>setShowValue(true)}>+ New Project</NavLink></h3>
-            <table className="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col">Due Date</th>
-                    <th scope="col">Status</th>
-                </tr>
-                </thead>
-            <tbody>
-            {tasks?.map((task,index)=>(
-                 <tr>
-                   <td>{task.name}</td>
-                   <td>{task.owners?.map((ownersId)=>{
-                    const selectedId = users?.find((val)=>val._id === ownersId)
-                    return selectedId?selectedId.name:null
-                   }).join(", ")}</td>
-                   <td>{new Date(task.updatedAt).getDate()} {months[new Date(task.updatedAt).getMonth()+1]},{new Date(task.updatedAt).getFullYear()}</td>
-                   <td>{task.status}</td>
-                   </tr>
+            <div className="row">
+            {fetchProject?.map((project, index) => (
+              <div className="col-md-4 col-sm-6">
+                <NavLink to={`/project/${project._id}`} state={`${project.name}`}style={{textDecoration:"none"}}>
+                <div
+                  className="card mb-3"
+                >
+                  <div className="card-body w-100 h-100"style={{ backgroundColor: "#e3e3eb"}}>
+                    <h6 className="card-text">{project.name}</h6>
+                    <span className="card-text fw-light fs-small">
+                      description: {project.description}
+                    </span>
+                  </div>
+                </div>
+                </NavLink>
+              </div>
+              
             ))}
-            </tbody>
-            </table>
-            {showProject && <ProjectForm onClose={()=>setShowValue(false)}/>}
+          </div>
+            {showProject && <ProjectForm onClose={()=>setShowValue(false)} onAddProject={handleAddProject}/>}
             </div>
           
         </div>

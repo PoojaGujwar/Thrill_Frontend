@@ -17,7 +17,7 @@ function Header() {
                 <ul className="" >
                     <li className="list-group-item py-2"><NavLink  to="/home" style={{textDecorationLine:"none"}}>Dashboard</NavLink></li>
                     <li className="list-group-item py-2"><NavLink  to="/project" style={{textDecorationLine:"none"}}>Projects</NavLink></li>
-                    {/* <li className="list-group-item py-2"><NavLink  to="/tasks" style={{textDecorationLine:"none"}}>Tasks</NavLink></li> */}
+                    <li className="list-group-item py-2"><NavLink  to="/tasks" style={{textDecorationLine:"none"}}>Tasks</NavLink></li>
                     <li className="list-group-item py-2"><NavLink to="/teams" style={{textDecorationLine:"none"}}>Teams</NavLink></li>
                     <li className="list-group-item py-2"><NavLink  to="/report"style={{textDecorationLine:"none"}}>Reports</NavLink></li>
                     <li className="list-group-item py-2"><NavLink  to="/" style={{textDecorationLine:"none"}}>Logout</NavLink></li>

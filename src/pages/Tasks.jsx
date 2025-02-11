@@ -8,6 +8,7 @@ export default function Tasks() {
    const [fetchT, setFetchTask] = useState([]);
    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; 
   const [taskShowValue, setTaskShowValue] = useState(false)
+
      const { data: fetchTasks,loading, error: taskError } = useFetch(
          "https://workasana-backend-kappa.vercel.app/tasks"
        );
@@ -32,25 +33,26 @@ export default function Tasks() {
         }
         setFetchTask(filterStatus);
       };
+      const handleAddTasks =(newTask)=>{ 
+        console.log(newTask,"New")
+        setFetchTask(prevValue=>[...prevValue, newTask]);
+      }
   return (
-   <div className=" mx-5 py-5">
-    <div className="row">
-      <div className="col-md-3">
-        <Header/>
-      </div>
-      <div className="col-md-8">
-
-    
+   <div className="mx-5">
+    <div className="">
       <h3>
         Tasks
         <NavLink
-          className="btn btn-primary float-end"
+          className="btn btn-primary float-end  "
           onClick={() => setTaskShowValue(true)}
         >
           + New Task
         </NavLink>
       </h3>
-     
+
+      
+    
+     </div>
       <label>Filter</label>
       <div>
         <input
@@ -132,9 +134,8 @@ export default function Tasks() {
           </div>
         ))}
       </div>
-      {taskShowValue && <TaskForm onWork={()=>setTaskShowValue(false)}/>}
+      {taskShowValue && <TaskForm onWork={()=>setTaskShowValue(false)} onAddTask={handleAddTasks}/>}
     </div>
-    </div>
-    </div>
+  
   );
 }
