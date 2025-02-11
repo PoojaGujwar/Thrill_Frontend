@@ -1,13 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 function Header() {
-   // data: [
-      //   lastWeekData?.length,
-      //   tasks?.length - notCompletedTasks?.length,
-      //   notCompletedTasks?.length,
-      //   tasks?.length,
-      // ]
+  const location = useLocation()
+  console.log(location)
   return (
     <header>
         <nav>
