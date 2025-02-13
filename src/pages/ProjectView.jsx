@@ -1,6 +1,5 @@
 import { useLocation, useParams, NavLink } from "react-router-dom"
 import useFetch from "../useFetch"
-import Header from "../components/Header"
 import { useEffect, useState } from "react"
 import TaskForm from "../components/TaskForm"
 import FilterByTag from "../filters/FilterByTag"

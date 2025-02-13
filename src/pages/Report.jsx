@@ -1,7 +1,6 @@
 import useFetch from "../useFetch";
 import { Pie, Bar } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js/auto";
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);

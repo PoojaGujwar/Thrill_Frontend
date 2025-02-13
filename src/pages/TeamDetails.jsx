@@ -1,5 +1,4 @@
 import { NavLink, useParams } from "react-router-dom";
-import Header from "../components/Header";
 import useFetch from "../useFetch";
 import TeamMember from "../components/TeamMember";
 import { useState, useEffect } from "react";
