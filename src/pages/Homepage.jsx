@@ -5,7 +5,7 @@ import Projects from "./Projects";
 
 function Homepage() {
   return (
-    <div className="">
+    <div className="py-5">
           <Projects/>
           <hr />
           <Tasks/>

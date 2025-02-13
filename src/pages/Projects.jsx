@@ -18,7 +18,7 @@ const Projects =()=>{
     return(
         <>
            
-        <div className="row mx-5">
+        <div className="row mx-5 py-4">
             <div className="col flex flex-col">
             <h3 className="mb-3">Project <NavLink className="btn btn-primary float-end" onClick={()=>setShowValue(true)}>+ New Project</NavLink></h3>
             <div className="row">

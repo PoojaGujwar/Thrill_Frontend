@@ -3,7 +3,7 @@ import { NavLink} from 'react-router-dom'
 
 function Header() { 
   return (
-    <header>
+    <header className='pt-4'style={{backgroundColor:"#efeff6",height:"mvh-100"}} >
         <nav>
             <div className='container'>
               <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between"}}>

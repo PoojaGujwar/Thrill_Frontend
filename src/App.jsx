@@ -14,7 +14,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <Router>
+    <Router className="mx-5 my-5">
       <AppContent />
     </Router>
   );
@@ -26,9 +26,9 @@ function AppContent() {
   const shouldShowHeader = location.pathname !== "/" && location.pathname !== "/signup";
 
   return (
-    <div className="d-flex mx-4 py-4">
-      {shouldShowHeader && <Header />} 
-      <Routes className="mx-5">
+    <div className="d-flex">
+      {shouldShowHeader && <Header />  } 
+      <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Homepage />} />

@@ -50,7 +50,7 @@ export default function TaskDetails(){
         }
      }
     return (
-        <div className="row mx-5">
+        <div className="row mx-5 py-4">
        <div className="mb-3 d-flex justify-content-start align-items-center">
             <ArrowBigLeftDash className="text-primary "/>
             <NavLink to="/tasks" className="fs-5 fw-bold mx-2"> Back to Tasks</NavLink>

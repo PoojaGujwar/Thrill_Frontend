@@ -29,7 +29,7 @@ export default function TeamDetails(){
       
       const finded = fetchTeam?.find((val)=>val._id === teamId)
      return (
-        <div className="mx-5 w-75">
+        <div className="mx-5 w-75 py-4">
             <div className="mb-3 d-flex justify-content-start align-items-center">
             <ArrowBigLeftDash className="text-primary "/>
             <NavLink to="/teams" className="fs-5 fw-bold mx-2"> Back to Team</NavLink>

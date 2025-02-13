@@ -32,7 +32,7 @@ export default function ProjectView() {
         setFetchTask(prevValue=>[...prevValue, newTask]);
       }
   return (
-    <div className="mx-5 w-100">
+    <div className="mx-5 py-4 w-100">
         <h1 className="pb-5">Project: {projectName}</h1>
         {loading && <p>Loading...</p>}
     <table className="table table-bordered table-hover">

@@ -38,7 +38,7 @@ export default function Tasks() {
         setFetchTask(prevValue=>[...prevValue, newTask]);
       }
   return (
-   <div className="mx-5">
+   <div className="mx-5 py-4">
     <div className="">
       <h3>
         Tasks
