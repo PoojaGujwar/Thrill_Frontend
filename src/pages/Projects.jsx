@@ -17,10 +17,9 @@ const Projects =()=>{
     }
     return(
         <>
-           
-        <div className="row mx-5 py-4">
-            <div className="col flex flex-col">
-            <h3 className="mb-3">Project <NavLink className="btn btn-primary float-end" onClick={()=>setShowValue(true)}>+ New Project</NavLink></h3>
+     <div className="mx-5 pt-4">
+            
+            <h3 className="mb-3">Project <NavLink className="btn btn-primary text-light float-end" onClick={()=>setShowValue(true)}>+ New Project</NavLink></h3>
             <div className="row">
             {fetchProject?.map((project, index) => (
               <div className="col-md-4 col-sm-6">
@@ -28,7 +27,7 @@ const Projects =()=>{
                 <NavLink to={`/project/${project._id}`} state={`${project.name}`}style={{textDecoration:"none"}}>
                 <div
                   className="card mb-3"
-                ><div className="card-header bg-secondary text-white">
+                ><div className="card-header bg-primary text-light">
                   <h4 className="card-text">{project.name}</h4>
                 </div>
                   <div className="card-body w-100 h-100"style={{ backgroundColor: "#e3e3eb"}}>
@@ -46,8 +45,6 @@ const Projects =()=>{
           </div>
             {showProject && <ProjectForm onClose={()=>setShowValue(false)} onAddProject={handleAddProject}/>}
             </div>
-          
-        </div>
         </>
     )
 }

@@ -28,7 +28,7 @@ setFetchTeam(teams)
      
     return(
         <div className="mx-5 py-4">
-        <div className="col">
+        <div className="">
             <h3>Teams <NavLink className="btn btn-primary float-end" onClick={()=>setShowValue(true)}>+ New Teams</NavLink></h3>
             <div className="row py-3">
             {fetchTeam?.map((team)=>

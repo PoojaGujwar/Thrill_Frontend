@@ -90,7 +90,7 @@ const teamData = {
 };
   return (
     <div className="mx-5 py-4 w-100">
-        <h1 className="mb-5">Report Review</h1>
+        <h2 className="mb-3">Report Review</h2>
         {reportError && <p>{reportError}</p>}
         <section>
           <h5>Filter by Project</h5>

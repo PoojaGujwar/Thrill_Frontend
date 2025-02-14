@@ -14,7 +14,7 @@ import Header from "./components/Header";
 
 function App() {
   return (
-    <Router className="mx-5 my-5">
+    <Router className="mx-5" style={{ minHeight: "100vh"}}>
       <AppContent />
     </Router>
   );
